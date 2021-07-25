@@ -80,50 +80,60 @@
       text-decoration: none;
       margin: 1rem;
     }
+
+    .list-item {
+      display: block;
+      margin-right: 10px;
+    }
+    .list-enter-active, .list-leave-active {
+      transition: all 0.3s;
+    }
+    .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+      opacity: 0;
+      transform: translateX(30px);
+    }
   </style>
 </head>
 <body>
   <div id="app">
     <input type="text" v-model="searchString" class="search" placeholder="Enter your name">
-    <template
-      v-for="(image, index) in imageList"
-    >
-      <div style="margin: 1rem; text-align: center;">
-        <a
-          class="link"
-          :key="'link-' + index"
-          :download="image.fileName + '.png'"
-          :href="image.base64String"
+    <div :key="forceRerenderFlag">
+      <transition-group name="list" tag="div">
+        <div style="margin: 1rem; text-align: center;" v-for="(image, index) in imageList" :key="'link-' + index">
+          <a
+            class="link"
+            :download="image.fileName + '.png'"
+            :href="image.base64String"
+            >
+            Download front side ({{ image.fileName }}.png)
+          </a>
+        </div>
+      </transition-group>
+      <transition-group name="list" tag="div">
+        <div
+          v-for="(member, index) in filteredMembers"
+          :key="'image-' + index"
+          :id="'canvas-' + index"
+          class="canvas"
+          style="background-image: url(./bg-front.svg)"
         >
-          Download front side ({{ image.fileName }}.png)
-        </a>
-      </div>
-    </template>
-    <template
-      v-for="(member, index) in filteredMembers"
-    >
-      <div
-        :key="'image-' + index"
-        :id="'canvas-' + index"
-        class="canvas"
-        style="background-image: url(./bg-front.svg)"
-      >
-        <div class="container">
-          <div class="name">
-            {{ member.fullName }}
-          </div>
-          <div class="role" :style="{ color: `var(--${member.roleColor})` }">
-            <template v-if="member.role.includes('Head') || member.role.includes('leader') || member.role.includes('manager')">
-              Core team leader -
-            </template>
-            <template v-else>
-              Core team member -
-            </template>
-            {{ member.role }}
+          <div class="container">
+            <div class="name">
+              {{ member.fullName }}
+            </div>
+            <div class="role" :style="{ color: `var(--${member.roleColor})` }">
+              <template v-if="member.role.includes('Head') || member.role.includes('leader') || member.role.includes('manager')">
+                Core team leader -
+              </template>
+              <template v-else>
+                Core team member -
+              </template>
+              {{ member.role }}
+            </div>
           </div>
         </div>
-      </div>
-    </template>
+      </transition-group>
+    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="./html2canvas.min.js"></script>
@@ -142,6 +152,7 @@
         renderComplete: false,
         searchString: '',
         imageList: [],
+        forceRerenderFlag: 0,
         members: memberList.map(member => {
           return {
             fullName: member.fullName,
@@ -167,6 +178,7 @@
               }
             }))
             this.imageList = results
+            forceRerenderFlag++
           }
         },
       },
