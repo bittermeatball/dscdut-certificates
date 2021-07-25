@@ -4,7 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Certificates generator</title>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/dsc_icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/dsc_icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/dsc_icon_light.png">
+  <meta property="og:image" content="/thumbnail.png">
+  <meta name="twitter:image" content="/thumbnail.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="grey">
+  <title>Hoorayyy!!! Here is your certificate, conratulations!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap" rel="stylesheet">
@@ -97,7 +104,7 @@
 <body>
   <div id="app">
     <input type="text" v-model="searchString" class="search" placeholder="Enter your name">
-    <div :key="forceRerenderFlag">
+    <div :key="forceRerenderFlag" v-if="renderComplete">
       <transition-group name="list" tag="div">
         <div style="margin: 1rem; text-align: center;" v-for="(image, index) in imageList" :key="'link-' + index">
           <a
@@ -160,6 +167,9 @@
             roleColor: colorMap[member.department]
           }
         })
+      },
+      mounted() {
+        this.renderComplete = true
       },
       watch: {
         filteredMembers: {
