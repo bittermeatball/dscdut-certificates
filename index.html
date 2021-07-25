@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificates generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: Google Sans, Roboto, Arial;
+    }
+    :root {
+      --red: #ea4335;
+      --blue: #4285f4;
+      --yellow: #fbbc05;
+      --green: #34a853;
+      --gray: #979797;
+
+      --canvas-w: 990.08px;
+      --canvas-h: 700px;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .canvas {
+      width: var(--canvas-w);
+      height: var(--canvas-h);
+      margin: auto;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 99999;
+      transform: translate(-50%, 5%);
+      text-align: center;
+      width: 100%;
+    }
+    .name {
+      font-size: calc(var(--canvas-w) / 14);
+      font-family: Parisienne;
+      line-height: calc(var(--canvas-w) / 11);
+      color: var(--gray);
+    }
+    .role {
+      font-weight: bold;
+      font-size: calc(var(--canvas-w) / 32);;
+      text-transform: uppercase;
+    }
+    .search {
+      width: 300px;
+      height: 40px;
+      border: none;
+      border-radius: 999px;
+      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.15);
+      font-size: 22px;
+      color: var(--gray);
+      padding: 5px 1rem;
+      box-sizing: border-box;
+      outline: none !important;
+      display: block;
+      margin: 3rem auto;
+    }
+    .link {
+      background-color: var(--blue);
+      color: white;
+      padding: 5px 1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      margin: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="searchString" class="search" placeholder="Enter your name">
+    <template
+      v-for="(image, index) in imageList"
+    >
+      <div style="margin: 1rem; text-align: center;">
+        <a
+          class="link"
+          :key="'link-' + index"
+          :download="image.fileName + '.png'"
+          :href="image.base64String"
+        >
+          Download front side ({{ image.fileName }}.png)
+        </a>
+      </div>
+    </template>
+    <template
+      v-for="(member, index) in filteredMembers"
+    >
+      <div
+        :key="'image-' + index"
+        :id="'canvas-' + index"
+        class="canvas"
+        style="background-image: url(./bg-front.svg)"
+      >
+        <div class="container">
+          <div class="name">
+            {{ member.fullName }}
+          </div>
+          <div class="role" :style="{ color: `var(--${member.roleColor})` }">
+            <template v-if="member.role.includes('Head') || member.role.includes('leader') || member.role.includes('manager')">
+              Core team leader -
+            </template>
+            <template v-else>
+              Core team member -
+            </template>
+            {{ member.role }}
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="./html2canvas.min.js"></script>
+  <script src="./members.js"></script>
+  <script>
+    var colorMap = {
+      Bussiness: 'blue',
+      Event: 'red',
+      Marketing: 'yellow',
+      Tech: 'green',
+    }
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        renderComplete: false,
+        searchString: '',
+        imageList: [],
+        members: memberList.map(member => {
+          return {
+            fullName: member.fullName,
+            role: member.skill,
+            roleColor: colorMap[member.department]
+          }
+        })
+      },
+      watch: {
+        filteredMembers: {
+          deep: true,
+          async handler() {
+            const results = await Promise.all(this.filteredMembers.map(async (member, index) => {
+              this.$set(this, 'currentMember', member)
+              await this.$nextTick()
+              const canvas = await html2canvas(document.getElementById('canvas-' + index))
+              const imageData = canvas.toDataURL("image/png");
+              const newData = imageData.replace(/^data:image\/png/, "data:application/octet-stream");
+              return {
+                ...member,
+                fileName: member.fullName,
+                base64String: newData,
+              }
+            }))
+            this.imageList = results
+          }
+        },
+      },
+      computed: {
+        filteredMembers() {
+          return this.searchString
+            ? [
+                this.members.filter(
+                  member => member.fullName.includes(this.searchString)[0] ||
+                  member.fullName.toLowerCase().includes(this.searchString.toLowerCase())
+                )[0]
+              ]
+            : []
+        },
+      },
+      methods: {
+        delay(time) {
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              resolve()
+            }, time)
+          })
+        }
+      }
+    })
+  </script>
+</body>
+</html>
