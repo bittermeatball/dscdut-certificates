@@ -1,219 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/dsc_icon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/dsc_icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/dsc_icon_light.png">
-  <meta property="og:image" content="/thumbnail.png">
-  <meta name="twitter:image" content="/thumbnail.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="grey">
-  <title>Hoorayyy!!! Here is your certificate, conratulations!</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
-  <style>
-    * {
-      font-family: Google Sans, Roboto, Arial;
-    }
-    :root {
-      --red: #ea4335;
-      --blue: #4285f4;
-      --yellow: #fbbc05;
-      --green: #34a853;
-      --gray: #979797;
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/dsc_icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/dsc_icon.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/dsc_icon_light.png"
+    />
+    <meta property="og:image" content="/thumbnail.png" />
+    <meta name="twitter:image" content="/thumbnail.png" />
+    <link rel="mask-icon" href="/images/logo.svg" color="grey" />
+    <title>Hoorayyy!!! Here is your certificate, conratulations!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: Google Sans, Roboto, Arial;
+      }
+      :root {
+        --red: #ea4335;
+        --blue: #4285f4;
+        --yellow: #fbbc05;
+        --green: #34a853;
+        --gray: #979797;
 
-      --canvas-w: 990.08px;
-      --canvas-h: 700px;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    .canvas {
-      width: var(--canvas-w);
-      height: var(--canvas-h);
-      margin: auto;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      position: relative;
-      margin-bottom: 2rem;
-    }
-    .container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      z-index: 99999;
-      transform: translate(-50%, 5%);
-      text-align: center;
-      width: 100%;
-    }
-    .name {
-      font-size: calc(var(--canvas-w) / 14);
-      font-family: Parisienne;
-      line-height: calc(var(--canvas-w) / 11);
-      color: var(--gray);
-    }
-    .role {
-      font-weight: bold;
-      font-size: calc(var(--canvas-w) / 32);;
-      text-transform: uppercase;
-    }
-    .search {
-      width: 300px;
-      height: 40px;
-      border: none;
-      border-radius: 999px;
-      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.15);
-      font-size: 22px;
-      color: var(--gray);
-      padding: 5px 1rem;
-      box-sizing: border-box;
-      outline: none !important;
-      display: block;
-      margin: 3rem auto;
-    }
-    .link {
-      background-color: var(--blue);
-      color: white;
-      padding: 5px 1rem;
-      border-radius: 999px;
-      text-decoration: none;
-      margin: 1rem;
-    }
+        --canvas-w: 990.8px;
+        --canvas-h: 700px;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .canvas {
+        width: var(--canvas-w);
+        height: var(--canvas-h);
+        margin: auto;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        margin-bottom: 2rem;
+      }
+      .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 99999;
+        transform: translate(-50%, 5%);
+        text-align: center;
+        width: 100%;
+      }
+      .name {
+        font-size: calc(var(--canvas-w) / 14);
+        font-family: Parisienne;
+        line-height: calc(var(--canvas-w) / 11);
+        color: var(--gray);
+      }
+      .role {
+        font-weight: bold;
+        font-size: calc(var(--canvas-w) / 32);
+        text-transform: uppercase;
+      }
+      .search {
+        width: 300px;
+        height: 40px;
+        border: none;
+        border-radius: 999px;
+        box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.15);
+        font-size: 22px;
+        color: var(--gray);
+        padding: 5px 1rem;
+        box-sizing: border-box;
+        outline: none !important;
+        display: block;
+        margin: 3rem auto;
+      }
+      .link {
+        background-color: var(--blue);
+        color: white;
+        padding: 5px 1rem;
+        border-radius: 999px;
+        text-decoration: none;
+        margin: 1rem;
+      }
 
-    .list-item {
-      display: block;
-      margin-right: 10px;
-    }
-    .list-enter-active, .list-leave-active {
-      transition: all 0.3s;
-    }
-    .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
-      opacity: 0;
-      transform: translateX(30px);
-    }
-  </style>
-</head>
-<body>
-  <div id="app">
-    <input type="text" v-model="searchString" class="search" placeholder="Enter your name">
-    <div :key="forceRerenderFlag" v-if="renderComplete">
-      <transition-group name="list" tag="div">
-        <div style="margin: 1rem; text-align: center;" v-for="(image, index) in imageList" :key="'link-' + index">
-          <a
-            class="link"
-            :download="image.fileName + '.png'"
-            :href="image.base64String"
+      .list-item {
+        display: block;
+        margin-right: 10px;
+      }
+      .list-enter-active,
+      .list-leave-active {
+        transition: all 0.3s;
+      }
+      .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input
+        type="text"
+        v-model="searchString"
+        class="search"
+        placeholder="Enter your name"
+      />
+      <div :key="forceRerenderFlag" v-if="renderComplete">
+        <transition-group name="list" tag="div">
+          <div
+            style="margin: 1rem; text-align: center"
+            v-for="(image, index) in imageList"
+            :key="'link-' + index"
+          >
+            <a
+              class="link"
+              :download="image.fileName + '.png'"
+              :href="image.base64String"
             >
-            Download front side ({{ image.fileName }}.png)
-          </a>
-        </div>
-      </transition-group>
-      <transition-group name="list" tag="div">
-        <div
-          v-for="(member, index) in filteredMembers"
-          :key="'image-' + index"
-          :id="'canvas-' + index"
-          class="canvas"
-          style="background-image: url(./bg-front.svg)"
-        >
-          <div class="container">
-            <div class="name">
-              {{ member.fullName }}
+              Download front side ({{ image.fileName }}.png)
+            </a>
+            <a
+              class="link"
+              :download="image.fileName + '-back.png'"
+              :href="image.base64StringBg"
+            >
+              Download back side ({{ image.fileName }}-back.png)
+            </a>
+          </div>
+        </transition-group>
+        <transition-group name="list" tag="div">
+          <div
+            v-for="(member, index) in filteredMembers"
+            :key="'image-' + index"
+          >
+            <div
+              class="canvas"
+              style="background-image: url(./bg-front.svg)"
+              :id="'canvas-' + index"
+            >
+              <div class="container">
+                <div class="name">{{ member.fullName }}</div>
+                <div
+                  class="role"
+                  :style="{ color: `var(--${member.roleColor})` }"
+                >
+                  <template
+                    v-if="member.role.includes('Head') || member.role.includes('leader') || member.role.includes('manager')"
+                  >
+                    Core team leader -
+                  </template>
+                  <template v-else> Core team member - </template>
+                  {{ member.role }}
+                </div>
+              </div>
             </div>
-            <div class="role" :style="{ color: `var(--${member.roleColor})` }">
-              <template v-if="member.role.includes('Head') || member.role.includes('leader') || member.role.includes('manager')">
-                Core team leader -
-              </template>
-              <template v-else>
-                Core team member -
-              </template>
-              {{ member.role }}
+            <div
+              class="canvas"
+              style="background-image: url(./bg-back.svg)"
+              :id="'canvas-bg-' + index"
+            >
+              <div class="container">
+                <div>
+                  <p>Products</p>
+                  <table>
+                    <tr
+                      v-for="(product, idx) in member.products"
+                      :key="'product-' + idx"
+                    >
+                      <td>{{ product.name }}</td>
+                      <td>{{ product.role }}</td>
+                    </tr>
+                  </table>
+                </div>
+                <div>
+                  <p>Events</p>
+                  <table>
+                    <tr
+                      v-for="(event, idx) in member.events"
+                      :key="'event-' + idx"
+                    >
+                      <td>{{ event.name }}</td>
+                      <td>{{ event.role }}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </transition-group>
+        </transition-group>
+      </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-  <script src="./html2canvas.min.js"></script>
-  <script src="./members.js"></script>
-  <script>
-    var colorMap = {
-      Bussiness: 'blue',
-      Event: 'red',
-      Marketing: 'yellow',
-      Tech: 'green',
-    }
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <!-- <script src="./html2canvas.min.js"></script> -->
+    <script src="./members.js"></script>
+    <script src="./products.js"></script>
+    <script src="./events.js"></script>
+    <script>
+      var colorMap = {
+        Bussiness: "blue",
+        Event: "red",
+        Marketing: "yellow",
+        Tech: "green",
+      };
 
-    var app = new Vue({
-      el: '#app',
-      data: {
-        renderComplete: false,
-        searchString: '',
-        imageList: [],
-        forceRerenderFlag: 0,
-        members: memberList.map(member => {
-          return {
-            fullName: member.fullName,
-            role: member.skill,
-            roleColor: colorMap[member.department]
-          }
-        })
-      },
-      mounted() {
-        this.renderComplete = true
-      },
-      watch: {
-        filteredMembers: {
-          deep: true,
-          async handler() {
-            const results = await Promise.all(this.filteredMembers.map(async (member, index) => {
-              this.$set(this, 'currentMember', member)
-              await this.$nextTick()
-              const canvas = await html2canvas(document.getElementById('canvas-' + index))
-              const imageData = canvas.toDataURL("image/png");
-              const newData = imageData.replace(/^data:image\/png/, "data:application/octet-stream");
-              return {
-                ...member,
-                fileName: member.fullName,
-                base64String: newData,
-              }
-            }))
-            this.imageList = results
-            forceRerenderFlag++
-          }
+      var app = new Vue({
+        el: "#app",
+        data: {
+          renderComplete: false,
+          searchString: "a",
+          imageList: [],
+          forceRerenderFlag: 0,
+          members: memberList.map((member) => {
+            return {
+              fullName: member.fullName,
+              role: member.skill,
+              roleColor: colorMap[member.department],
+              events: member.events?.map((event) => {
+                const eventName = eventList[event[0]];
+                const eventRole = eventRoles[event[1]];
+                return {
+                  name: eventName,
+                  role: eventRole,
+                };
+              }),
+              products: member.products?.map((product) => {
+                const productName = productList[product[0]];
+                const productRole = productRoles[product[1]];
+                return {
+                  name: productName,
+                  role: productRole,
+                };
+              }),
+            };
+          }),
         },
-      },
-      computed: {
-        filteredMembers() {
-          return this.searchString
-            ? [
-                this.members.filter(
-                  member => member.fullName.includes(this.searchString)[0] ||
-                  member.fullName.toLowerCase().includes(this.searchString.toLowerCase())
-                )[0]
-              ]
-            : []
+        mounted() {
+          this.renderComplete = true;
         },
-      },
-      methods: {
-        delay(time) {
-          return new Promise((resolve) => {
-            setTimeout(() => {
-              resolve()
-            }, time)
-          })
-        }
-      }
-    })
-  </script>
-</body>
+        watch: {
+          filteredMembers: {
+            deep: true,
+            async handler() {
+              const results = await Promise.all(
+                this.filteredMembers.map(async (member, index) => {
+                  this.$set(this, "currentMember", member);
+                  await this.$nextTick();
+                  // Front page
+                  const canvas = await html2canvas(
+                    document.getElementById("canvas-" + index),
+                    { scale: 1, allowTaint: true, useCORS: true }
+                  );
+                  const imageData = canvas.toDataURL("image/png");
+                  const newData = imageData.replace(
+                    /^data:image\/png/,
+                    "data:application/octet-stream"
+                  );
+                  // Back page
+                  const canvasBg = await html2canvas(
+                    document.getElementById("canvas-bg-" + index),
+                    { scale: 1, allowTaint: true, useCORS: true }
+                  );
+                  const imageDataBg = canvasBg.toDataURL("image/png");
+                  const newDataBg = imageDataBg.replace(
+                    /^data:image\/png/,
+                    "data:application/octet-stream"
+                  );
+                  return {
+                    ...member,
+                    fileName: member.fullName,
+                    base64String: newData,
+                    base64StringBg: newDataBg,
+                  };
+                })
+              );
+              this.imageList = results;
+              forceRerenderFlag++;
+            },
+          },
+        },
+        computed: {
+          filteredMembers() {
+            return this.searchString
+              ? [
+                  this.members.filter(
+                    (member) =>
+                      member.fullName.includes(this.searchString)[0] ||
+                      member.fullName
+                        .toLowerCase()
+                        .includes(this.searchString.toLowerCase())
+                  )[0],
+                ]
+              : [];
+          },
+        },
+        methods: {
+          delay(time) {
+            return new Promise((resolve) => {
+              setTimeout(() => {
+                resolve();
+              }, time);
+            });
+          },
+        },
+      });
+    </script>
+  </body>
 </html>
