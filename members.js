@@ -27,14 +27,14 @@ const memberList = [
     "skill": "Event organizer"
   },
   {
-    events: ['10', '20', '30'],
+    events: ['10', '20', '36'],
     "fullName": "Ho Nhat Thao Mien",
     "department": "Event",
     "skill": "Event organizer"
   },
   {
-    products: ['59'],
-    events: ['00', '10', '20', '30', '40'],
+    products: ['58'],
+    events: ['00', '10', '26', '30', '40'],
     "fullName": "Nguyen Thi Thuy Linh",
     "department": "Event",
     "skill": "Event organizer"
@@ -42,7 +42,7 @@ const memberList = [
   {
     marketing: [0, 1, 2, 3],
     products: ['00'],
-    events: ['02', '12', '22', '32', '42'],
+    events: ['02', '12', '22', '42'],
     "fullName": "Huynh Thi Ngoc Quyen",
     "department": "Marketing",
     "skill": "Head of Marketing"
@@ -66,6 +66,7 @@ const memberList = [
     "skill": "Social media"
   },
   {
+    products: ['13'],
     marketing: [0, 1, 2, 3],
     events: ['01', '11', '45'],
     "fullName": "Le Hong Hai",
@@ -74,22 +75,24 @@ const memberList = [
   },
   {
     marketing: [0, 1, 2, 3],
-    products: ['33', '53'],
+    products: ['02', '33', '53'],
     events: ['11', '21', '31'],
     "fullName": "Nguyen Dinh Khanh Linh",
     "department": "Marketing",
     "skill": "Designer"
   },
   {
+    products: ['12'],
     marketing: [0, 1, 2, 3],
-    events: ['11', '21'],
+    events: ['17', '21'],
     "fullName": "Do Thi Kim Oanh",
     "department": "Marketing",
     "skill": "Designer"
   },
   {
+    products: ['11'],
     marketing: [0, 1, 2, 3],
-    events: ['12', '22', '32'],
+    events: ['12', '20', '32'],
     "fullName": "Tran Thi Thuy Duyen",
     "department": "Marketing",
     "skill": "Social media"
@@ -102,6 +105,7 @@ const memberList = [
     "skill": "Social media"
   },
   {
+    products: ['10'],
     marketing: [0, 1, 2, 3],
     events: ['12', '22', '32'],
     "fullName": "Nguyen Linh Huong",
@@ -109,23 +113,27 @@ const memberList = [
     "skill": "Social media"
   },
   {
+    products: ['26'],
     "fullName": "Nguyen Minh Duc",
     "department": "Tech",
     "skill": "Mobile developer"
   },
   {
+    products: ['17'],
     events: ['10'],
     "fullName": "Le Viet Trung",
     "department": "Tech",
     "skill": "Machine learning"
   },
   {
+    products: ['11'],
     events: ['10'],
     "fullName": "Pham Manh Dung",
     "department": "Tech",
     "skill": "Machine learning"
   },
   {
+    products: ['21'],
     events: ['00', '10'],
     "fullName": "Nguyen Ngoc Quang",
     "department": "Tech",
@@ -144,32 +152,38 @@ const memberList = [
     "skill": "Technical leader"
   },
   {
+    products: ['35'],
     "fullName": "Nguyen Tien Van",
     "department": "Tech",
     "skill": "Backend developer"
   },
   {
+    products: ['05'],
     "fullName": "Do Huu Nguyen Thang",
     "department": "Tech",
     "skill": "Backend developer"
   },
   {
+    products: ['14', '44'],
     events: ['10', '20'],
     "fullName": "Le Lien Huong",
     "department": "Tech",
     "skill": "Frontend developer"
   },
   {
+    products: ['14', '44'],
     "fullName": "Nguyen Huu Duc Huy",
     "department": "Tech",
     "skill": "Frontend developer"
   },
   {
+    products: ['34'],
     "fullName": "Nguyen Tan Phat",
     "department": "Tech",
     "skill": "Frontend developer"
   },
   {
+    products: ['26'],
     events: ['00', '13', '20'],
     "fullName": "Phan Thanh Huy",
     "department": "Tech",
@@ -182,23 +196,27 @@ const memberList = [
     "skill": "Mobile developer"
   },
   {
+    products: ['16'],
     events: ['10'],
     "fullName": "Le Vinh Nhan Duc",
     "department": "Tech",
     "skill": "Mobile developer"
   },
   {
+    products: ['17'],
     events: ['10'],
     "fullName": "Le Thi Kim Chi",
     "department": "Tech",
     "skill": "Backend developer"
   },
   {
+    products: ['15', '45'],
     "fullName": "Nguyen Ich Hoa",
     "department": "Tech",
     "skill": "Backend developer"
   },
   {
+    products: ['64'],
     events: ['10', '20'],
     "fullName": "Huynh Thi Khanh Linh",
     "department": "Tech",

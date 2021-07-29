@@ -13,4 +13,6 @@ const eventRoles = [
   'Speaker', // 3
   'Photographer', // 4
   'Video editor', // 5
+  'Event manager', // 6
+  'Social media lead', // 7
 ]

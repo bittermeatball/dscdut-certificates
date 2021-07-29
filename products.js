@@ -5,6 +5,7 @@ const productList = [
   'GDSC - DUT Official website', // 3
   'GDSC Shorten URL tool', // 4
   'GDSC Event cookbook', // 5
+  'Google DSC loading spinner', // 6
 ]
 
 const productRoles = [
@@ -15,7 +16,6 @@ const productRoles = [
   'Frontend developer', // 4
   'Backend developer', // 5
   'Mobile developer', // 6
-  'Mobile developer', // 7
-  'Data annotator', // 8
-  'Translator', // 9
+  'Data annotator', // 7
+  'Translator', // 8
 ]

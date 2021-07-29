@@ -25,7 +25,7 @@
     <meta property="og:image" content="/thumbnail.png" />
     <meta name="twitter:image" content="/thumbnail.png" />
     <link rel="mask-icon" href="/images/logo.svg" color="grey" />
-    <title>Hoorayyy!!! Here is your certificate, conratulations!</title>
+    <title>Hoorayyy!!! Here is your certificate, congratulations!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -66,7 +66,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         position: relative;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
       }
       .container {
         position: absolute;
@@ -122,6 +122,22 @@
       .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
         opacity: 0;
         transform: translateX(30px);
+      }
+
+      /* Back side */
+      .container-back {
+        padding: 4rem;
+        color: var(--gray);
+      }
+      .container-back table {
+        width: 100%;
+        text-align: left;
+      }
+      .container-back td {
+        width: 50%;
+      }
+      .container-back p {
+        font-weight: bold;
       }
     </style>
   </head>
@@ -187,8 +203,8 @@
               style="background-image: url(./bg-back.svg)"
               :id="'canvas-bg-' + index"
             >
-              <div class="container">
-                <div>
+              <div class="container-back">
+                <div v-if="member.products.length" class="achievements">
                   <p>Products</p>
                   <table>
                     <tr
@@ -200,7 +216,7 @@
                     </tr>
                   </table>
                 </div>
-                <div>
+                <div v-if="member.events.length" class="achievements">
                   <p>Events</p>
                   <table>
                     <tr
@@ -209,6 +225,17 @@
                     >
                       <td>{{ event.name }}</td>
                       <td>{{ event.role }}</td>
+                    </tr>
+                  </table>
+                </div>
+                <div v-if="member.marketing.length" class="achievements">
+                  <p>Marketing</p>
+                  <table>
+                    <tr
+                      v-for="(work, id) in member.marketing"
+                      :key="'work-' + id"
+                    >
+                      <td>{{ work.name }}</td>
                     </tr>
                   </table>
                 </div>
@@ -224,6 +251,7 @@
     <script src="./members.js"></script>
     <script src="./products.js"></script>
     <script src="./events.js"></script>
+    <script src="./marketing.js"></script>
     <script>
       var colorMap = {
         Bussiness: "blue",
@@ -236,7 +264,7 @@
         el: "#app",
         data: {
           renderComplete: false,
-          searchString: "a",
+          searchString: "",
           imageList: [],
           forceRerenderFlag: 0,
           members: memberList.map((member) => {
@@ -244,22 +272,31 @@
               fullName: member.fullName,
               role: member.skill,
               roleColor: colorMap[member.department],
-              events: member.events?.map((event) => {
-                const eventName = eventList[event[0]];
-                const eventRole = eventRoles[event[1]];
-                return {
-                  name: eventName,
-                  role: eventRole,
-                };
-              }),
-              products: member.products?.map((product) => {
-                const productName = productList[product[0]];
-                const productRole = productRoles[product[1]];
-                return {
-                  name: productName,
-                  role: productRole,
-                };
-              }),
+              events:
+                member.events?.map((event) => {
+                  const eventName = eventList[event[0]];
+                  const eventRole = eventRoles[event[1]];
+                  return {
+                    name: eventName,
+                    role: eventRole,
+                  };
+                }) || [],
+              products:
+                member.products?.map((product) => {
+                  const productName = productList[product[0]];
+                  const productRole = productRoles[product[1]];
+                  return {
+                    name: productName,
+                    role: productRole,
+                  };
+                }) || [],
+              marketing:
+                member.marketing?.map((work) => {
+                  const workName = marketingList[work];
+                  return {
+                    name: workName,
+                  };
+                }) || [],
             };
           }),
         },
@@ -303,7 +340,7 @@
                 })
               );
               this.imageList = results;
-              forceRerenderFlag++;
+              this.forceRerenderFlag++;
             },
           },
         },
