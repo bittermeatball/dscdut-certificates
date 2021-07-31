@@ -239,6 +239,10 @@
                     </tr>
                   </table>
                 </div>
+                <div v-if="member.description" class="achievements">
+                  <p>A few words about {{ member.fullName }}</p>
+                  <p style="font-weight: normal">{{ member.description }}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -270,6 +274,7 @@
           members: memberList.map((member) => {
             return {
               fullName: member.fullName,
+              description: member.description,
               role: member.skill,
               roleColor: colorMap[member.department],
               events:
