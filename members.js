@@ -62,6 +62,7 @@ const memberList = [
     "skill": "Photographer"
   },
   {
+    events: ['37'],
     marketing: [0, 1, 3],
     "fullName": "Thai Khanh Huyen",
     "department": "Marketing",
@@ -90,7 +91,7 @@ const memberList = [
     events: ['11', '21', '31'],
     "fullName": "Nguyen Dinh Khanh Linh",
     "department": "Marketing",
-    "description": `Firstly, I have a lot of gratitude and luck for having Ms Linh in my team. I highly recommend everyone refer to her products such as: DSC-DUT event cookbook, photoshoot and lookebook for Gen 2 to understand her design specialization. Although she worked in DSC-DUT as a designer, she was ready for all challenges like: data analysis, plan, content creation and working as a photographer in event and photoshoot. If I remember exactly, Linh has never refused all tasks I gave her and finished them well.  Moreover, I was given her support  when the marketing department faced challenges especially lack of human resources. She is an indispensable part of the marketing department as well as DSC-DUT in the second semester. `,
+    "description": `Firstly, I have a lot of gratitude and luck for having Ms Linh in my team. I highly recommend everyone refer to her products such as: DSC-DUT event cookbook, photoshoot and lookebook for Gen 2 to understand her design specialization. Although she worked in DSC-DUT as a designer, she was ready for all challenges like: data analysis, plan, content creation and working as a photographer in event and photoshoot. If I remember exactly, Linh has never refused all tasks I gave her and finished them well.  Moreover, I was given her support  when the marketing department faced challenges especially lack of human resources. She is an indispensable part of the marketing department as well as DSC-DUT in the second semester.`,
     "skill": "Designer"
   },
   {
@@ -113,7 +114,7 @@ const memberList = [
   },
   {
     marketing: [0, 1, 2, 3],
-    events: ['12', '22', '32'],
+    events: ['12', '27', '32'],
     "fullName": "Phan Thi Thuy Linh",
     "department": "Marketing",
     "description": `In the first interview, I had high expectations for her although she was like a white paper at that time. Honestly, I am really happy for her progress after a semester at DSC-DUT. She is alway active to update her knowledge about marketing, sharpen her soft skills despite her first year in her university. In terms of social media specialization, she is good at content creation with a variety of styles, event communication planning and backup plan for an event. I think Linh needs to be more confident in herself, gain her communication skills to work and develop her basic career better. With her MIS major, her ability and attitude, I believe that she can be a manager or leader in many kinds of projects including in technology projects in the future. `,
@@ -140,7 +141,7 @@ const memberList = [
     events: ['10'],
     "fullName": "Le Viet Trung",
     "department": "Tech",
-    "description": ``,
+    "description": `Dynamic, always exploring, participating in many different clubs but Trung still leaves his own mark at GDSC. `,
     "skill": "Machine learning"
   },
   {
@@ -163,7 +164,7 @@ const memberList = [
     events: ['00', '10'],
     "fullName": "Nguyen Ba Hoang",
     "department": "Tech",
-    "description": ``,
+    "description": `As one of the veteran members of the Machine Learning team, Hoang always brings in-depth knowledge of Machine Learning and mathematics. Sharing knowledge in workshops, participating in side projects, winning scholarships at university, Hoang is an idol at GDSC. Perhaps because he has to spend a lot of time doing scientific research, he doesn't appear much in meetings. Hope Hoang will be the first member of GDSC to get a Ph.D degree.`,
     "skill": "Machine learning"
   },
   {
@@ -177,7 +178,22 @@ const memberList = [
     products: ['35'],
     "fullName": "Nguyen Tien Van",
     "department": "Tech",
-    "description": ``,
+    "description": `
+    End game blah blah
+    End game blah blah
+    100%
+    10
+    B2
+    
+    Always appearing with a confident demeanor, ready to help people in technical matters, Van is a dynamic, intelligent guy with a passion for programming. As a sociable, enthusiastic member, he regularly participates in meetings of the technical team as well as of the core team and outdoor activities, parties to enjoy barley smoothies can't be without him.He is also very good at school with a high GPA and is always trusted by his teachers. To sum up, Van has had a memorable year with GDSC, hope he will always keep his enthusiasm and become an important part of GDSC. 
+    To enable screen reader support, press Ctrl+Alt+Z To learn about keyboard shortcuts, press Ctrl+slash
+     
+     
+         
+    
+    Always appearing with a confident demeanor, ready to help people in technical matters, Van is a dynamic, intelligent guy with a passion for programming. As a sociable, enthusiastic member, he regularly participates in meetings of the technical team as well as of the core team and outdoor activities, parties to enjoy barley smoothies can't be without him.He is also very good at school with a high GPA and is always trusted by his teachers. To sum up, Van has had a memorable year with GDSC, hope he will always keep his enthusiasm and become an important part of GDSC. 
+    Turn on screen reader support
+    `,
     "skill": "Backend developer"
   },
   {
